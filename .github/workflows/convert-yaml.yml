@@ -11,13 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: 'zacred0rryn/srs-custom'
+          repository: 'Atticux-me/rule-sets'
           persist-credentials: false
           fetch-depth: 0
 
       - uses: actions/checkout@v4
         with:
-          repository: 'zacred0rryn/srs-custom'
+          repository: 'Atticux-me/rule-sets'
           ref: 'scripts'
           path: '_scripts'
 
@@ -94,5 +94,5 @@ jobs:
           curl -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            https://api.github.com/repos/zacred0rryn/srs-custom/actions/workflows/compile.yml/dispatches \
+            https://api.github.com/repos/Atticux-me/rule-sets/actions/workflows/compile.yml/dispatches \
             -d '{"ref":"main"}'
