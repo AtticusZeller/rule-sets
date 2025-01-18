@@ -1,3 +1,2 @@
 https://raw.gh.atticux.me/SagerNet/sing-geosite/rule-set/geosite-cn.srs
-https://raw.gh.atticux.me/SagerNet/sing-geoip/rule-set/geoip-cn.srs
 https://raw.gh.atticux.me/SagerNet/sing-geosite/rule-set/geosite-private.srs

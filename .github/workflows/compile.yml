@@ -2,6 +2,8 @@ name: Compile SRS
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'  # 每天 UTC 0:00 运行
   push:
     branches:
       - main
@@ -14,29 +16,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: 'Atticux-me/rule-sets'
+          repository: 'AtticusZeller/rule-sets'
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Download and Set Up sing-box
-        run: |
-          mkdir -p tmp/compile
-          wget -O sing-box.tar.gz https://github.com/SagerNet/sing-box/releases/download/v1.10.0-alpha.22/sing-box-1.10.0-alpha.22-linux-amd64.tar.gz
-          tar zxvf sing-box.tar.gz && rm sing-box.tar.gz
-          mv sing-box-1.10.0-alpha.22-linux-amd64/sing-box tmp/compile/
-          rm -r sing-box-1.10.0-alpha.22-linux-amd64
+      - name: Install jq
+        run: sudo apt-get install -y jq
 
-      - name: Compile with sing-box
+      - name: compile
         run: |
-          cp source/* tmp/compile/
-          cd tmp/compile
-          for file in *.json; do
-            ./sing-box rule-set compile "$file" -o "${file%.json}.srs"
-          done
-          cd ../.. && mv binary/adguard .
-          rm -r binary/* && mv adguard binary/
-          cp tmp/compile/*.srs binary/
-          rm -r tmp && ls -l binary
+          # 添加执行权限
+          chmod +x ./main.sh
+          # 运行脚本并输出详细信息
+          bash -x ./main.sh
 
       - name: Check and Commit
         run: |

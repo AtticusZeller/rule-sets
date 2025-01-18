@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_suffix": [
+        ".cn",
+        "metacubexd.pages.dev",
+        "atticux.me"
+      ],
+      "domain_keyword": "cn"
+    }
+  ]
+}
