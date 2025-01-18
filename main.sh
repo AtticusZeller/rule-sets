@@ -9,24 +9,24 @@ if ! command -v jq &>/dev/null; then
 fi
 
 
-mkdir -p ./tmp/rule-sets/{proxy,direct}
+mkdir -p tmp/rule-sets/{proxy,direct}
 mkdir -p source/{proxy,direct} binary
 
 echo "Downloading proxy rules..."
 while IFS= read -r url; do
     filename=$(basename "$url")
-    wget -q "$url" -O "./tmp/rule-sets/proxy/${filename}"
+    wget -q "$url" -O "tmp/rule-sets/proxy/${filename}"
 done <proxy-list.txt
 
 echo "Downloading direct rules..."
 while IFS= read -r url; do
     filename=$(basename "$url")
-    wget -q "$url" -O "./tmp/rule-sets/direct/${filename}"
+    wget -q "$url" -O "tmp/rule-sets/direct/${filename}"
 done <direct-list.txt
 
 # 反编译所有代理规则为json
 echo "Decompiling proxy rules..."
-for file in ./tmp/rule-sets/proxy/*.srs; do
+for file in tmp/rule-sets/proxy/*.srs; do
     filename=$(basename "$file")
     json_name="source/proxy/${filename%.srs}.json"
     ./sing-box rule-set decompile "$file" -o "$json_name"
@@ -34,7 +34,7 @@ done
 
 # 反编译所有直连规则为json
 echo "Decompiling direct rules..."
-for file in ./tmp/rule-sets/direct/*.srs; do
+for file in tmp/rule-sets/direct/*.srs; do
     filename=$(basename "$file")
     json_name="source/direct/${filename%.srs}.json"
     ./sing-box rule-set decompile "$file" -o "$json_name"
@@ -71,6 +71,6 @@ echo "Compiling final rule sets..."
 
 # 清理临时文件
 echo "Cleaning up..."
-rm -rf ./tmp/
+rm -rf tmp/
 
 echo "Done! Final rule sets are in binary/proxy.srs and binary/direct.srs"

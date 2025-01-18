@@ -24,11 +24,7 @@ jobs:
         run: sudo apt-get install -y jq
 
       - name: compile
-        run: |
-          # 添加执行权限
-          chmod +x ./main.sh
-          # 运行脚本并输出详细信息
-          bash -x ./main.sh
+        run: bash -x ./main.sh
 
       - name: Check and Commit
         run: |

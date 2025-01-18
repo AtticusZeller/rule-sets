@@ -1,2 +1,2 @@
-https://raw.gh.atticux.me/SagerNet/sing-geosite/rule-set/geosite-cn.srs
-https://raw.gh.atticux.me/SagerNet/sing-geosite/rule-set/geosite-private.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-private.srs
