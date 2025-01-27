@@ -8,7 +8,6 @@ if ! command -v jq &>/dev/null; then
     exit 1
 fi
 
-
 mkdir -p tmp/rule-sets/{proxy,direct}
 mkdir -p source/{proxy,direct} binary
 
@@ -43,27 +42,22 @@ done
 echo "Formatting proxy rules..."
 for file in source/proxy/*.json; do
     filename=$(basename "$file")
+    ./sing-box rule-set upgrade "$file" -w
     ./sing-box rule-set format "$file" -w
 done
 
 echo "Formatting direct rules..."
 for file in source/direct/*.json; do
     filename=$(basename "$file")
+    ./sing-box rule-set upgrade "$file" -w
     ./sing-box rule-set format "$file" -w
+
 done
 
 # 使用目录方式合并规则
 echo "Merging rules..."
 ./sing-box rule-set merge source/merged_proxy.json -C source/proxy
 ./sing-box rule-set merge source/merged_direct.json -C source/direct
-
-echo "Updating version number..."
-for file in source/merged_*.json; do
-    # 创建临时文件
-    temp_file="${file}.temp"
-    jq '.version = 3' "$file" >"$temp_file" && mv "$temp_file" "$file"
-done
-
 # 编译最终的规则集
 echo "Compiling final rule sets..."
 ./sing-box rule-set compile source/merged_proxy.json -o binary/proxy.srs
