@@ -12,7 +12,6 @@
         "production-openaicom-storage.azureedge.net"
       ],
       "domain_suffix": [
-        "ai.com",
         "chat.com",
         "chatgpt.com",
         "chatgpt.livekit.cloud",
