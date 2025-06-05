@@ -7,7 +7,10 @@
         "metacubexd.pages.dev",
         "atticux.me"
       ],
-      "domain_keyword": "cn"
+      "domain_keyword": [
+        "cn",
+        "vidhub"
+    ]
     }
   ]
 }
