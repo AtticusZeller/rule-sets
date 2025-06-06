@@ -55,13 +55,6 @@
         "format": "binary",
         "url": "https://raw.gh.atticux.me/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
         "download_detour": "direct"
-      },
-      {
-        "type": "remote",
-        "tag": "dns-filter",
-        "format": "binary",
-        "url": "https://raw.gh.atticux.me/REIJI007/AdBlock_Rule_For_Sing-box/main/adblock_reject.srs",
-        "download_detour": "direct"
       }
     ],
 ```
