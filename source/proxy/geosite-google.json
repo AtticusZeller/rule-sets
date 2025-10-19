@@ -232,7 +232,8 @@
         "www.destinationurl.com",
         "www.gstatic.com",
         "www.pxcc.com",
-        "www.recaptcha.net"
+        "www.recaptcha.net",
+        "yt3.googleusercontent.com"
       ],
       "domain_suffix": [
         ".and",
