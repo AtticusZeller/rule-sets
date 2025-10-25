@@ -4,6 +4,7 @@
     {
       "domain_suffix": [
         "argotunnel.com",
+        "cf-china.info",
         "cf-ipfs.com",
         "cf-ns.com",
         "cf-ns.net",
@@ -41,6 +42,7 @@
         "cloudflareportal.com",
         "cloudflarepreview.com",
         "cloudflareprod.com",
+        "cloudflareregistrar.com",
         "cloudflareresolve.com",
         "cloudflaressl.com",
         "cloudflarestaging.com",
