@@ -9,6 +9,8 @@
       "domain_suffix": [
         "atom.io",
         "blob.core.windows.net",
+        "collector.github.com",
+        "copilot-telemetry.githubusercontent.com",
         "dependabot.com",
         "gh.io",
         "ghcr.io",
