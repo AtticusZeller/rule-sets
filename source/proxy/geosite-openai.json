@@ -23,7 +23,7 @@
         "sora.com",
         "turn.livekit.cloud"
       ],
-      "domain_regex": "^chatgpt-async-webps-prod-\\s+-\\d+\\.webpubsub\\.azure\\.com$"
+      "domain_regex": "^chatgpt-async-webps-prod-\\S+-\\d+\\.webpubsub\\.azure\\.com$"
     }
   ]
 }
