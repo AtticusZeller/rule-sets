@@ -7929,16 +7929,16 @@
         "zztfly.com"
       ],
       "domain_regex": [
-        "^gog-cdn-.+\\.footprint\\.net$",
-        "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.googlevideo\\.com$",
-        "^nis.+\\.10010\\.com$",
-        "^cdn\\d-epicgames-\\d+\\.file\\.myqcloud\\.com$",
-        ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$",
-        "^.+-mihayo\\.akamaized\\.net$",
-        "^cdn-akamai-.+\\.gog-services\\.com$",
         "^images(-\\d)?\\.gog-statics\\.com$",
+        "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.googlevideo\\.com$",
+        "^gog-cdn-.+\\.footprint\\.net$",
+        ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$",
         "^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$",
         "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$",
+        "^nis.+\\.10010\\.com$",
+        "^.+-mihayo\\.akamaized\\.net$",
+        "^cdn\\d-epicgames-\\d+\\.file\\.myqcloud\\.com$",
+        "^cdn-akamai-.+\\.gog-services\\.com$",
         ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
       ]
     },
