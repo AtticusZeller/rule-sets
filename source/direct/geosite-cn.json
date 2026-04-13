@@ -2435,7 +2435,6 @@
         "cloudnantong.com",
         "cloudpush.iqiyi.com",
         "cloudquanzhou.com",
-        "cloudru.cn",
         "cloudsanya.com",
         "cloudshanghai.com",
         "cloudshaoyang.com",
@@ -7941,16 +7940,16 @@
         "zztfly.com"
       ],
       "domain_regex": [
-        "^gog-cdn-.+\\.footprint\\.net$",
-        "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$",
-        "^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$",
-        ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$",
-        "^cdn-akamai-.+\\.gog-services\\.com$",
-        "^.+-mihayo\\.akamaized\\.net$",
-        "^nis.+\\.10010\\.com$",
         "^cdn\\d-epicgames-\\d+\\.file\\.myqcloud\\.com$",
-        "^images(-\\d)?\\.gog-statics\\.com$",
+        "^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$",
         "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.googlevideo\\.com$",
+        "^cdn-akamai-.+\\.gog-services\\.com$",
+        "^images(-\\d)?\\.gog-statics\\.com$",
+        "^.+-mihayo\\.akamaized\\.net$",
+        ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$",
+        "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$",
+        "^nis.+\\.10010\\.com$",
+        "^gog-cdn-.+\\.footprint\\.net$",
         ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$"
       ]
     }
