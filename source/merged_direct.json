@@ -992,6 +992,7 @@
         "8686c.com",
         "885.com",
         "88cdn.com",
+        "88cha.com",
         "8btc.com",
         "8gcdp.cn",
         "8n82b.cn",
@@ -8117,17 +8118,17 @@
         "zztfly.com"
       ],
       "domain_regex": [
-        "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.googlevideo\\.com$",
-        ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$",
-        ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$",
         "^gog-cdn-.+\\.footprint\\.net$",
-        "^cdn\\d-epicgames-\\d+\\.file\\.myqcloud\\.com$",
-        "^nis.+\\.10010\\.com$",
-        "^.+-mihayo\\.akamaized\\.net$",
-        "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$",
         "^images(-\\d)?\\.gog-statics\\.com$",
         "^cdn-akamai-.+\\.gog-services\\.com$",
-        "^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$"
+        "^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$",
+        "^.+-mihayo\\.akamaized\\.net$",
+        "^cdn\\d-epicgames-\\d+\\.file\\.myqcloud\\.com$",
+        ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$",
+        "^nis.+\\.10010\\.com$",
+        "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$",
+        "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.googlevideo\\.com$",
+        ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
       ]
     },
     {
