@@ -3,7 +3,6 @@
   "rules": [
     {
       "domain": [
-        "265.com",
         "alt1-mtalk.google.com",
         "alt2-mtalk.google.com",
         "alt3-mtalk.google.com",
@@ -99,6 +98,7 @@
         "www.destinationurl.com",
         "www.gstatic.com",
         "www.pxcc.com",
+        "www.recaptcha-cn.net",
         "www.recaptcha.net"
       ],
       "domain_suffix": [
@@ -120,6 +120,7 @@
         "0emm.com",
         "1e100.net",
         "1ucrs.com",
+        "265.com",
         "2mdn-cn.net",
         "2mdn.net",
         "466453.com",
@@ -269,6 +270,7 @@
         "coova.com",
         "coova.net",
         "coova.org",
+        "crashlytics.com",
         "crossmediapanel.com",
         "crr.com",
         "cs4hs.com",
