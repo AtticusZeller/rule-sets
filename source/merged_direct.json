@@ -5604,6 +5604,7 @@
         "myquark.cn",
         "myshow360.net",
         "mysiteres.com",
+        "mysqil.com",
         "mysxl.cn",
         "myypark.com",
         "myyx618.com",
@@ -8359,17 +8360,17 @@
         "zztfly.com"
       ],
       "domain_regex": [
-        "^images(-\\d)?\\.gog-statics\\.com$",
-        ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$",
         "^.+-mihayo\\.akamaized\\.net$",
+        "^images(-\\d)?\\.gog-statics\\.com$",
+        "^gog-cdn-.+\\.footprint\\.net$",
+        "^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$",
         "^cdn\\d-epicgames-\\d+\\.file\\.myqcloud\\.com$",
         "^cdn-akamai-.+\\.gog-services\\.com$",
+        "^nis.+\\.10010\\.com$",
+        ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$",
         "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$",
-        "^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$",
         "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.googlevideo\\.com$",
-        ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$",
-        "^gog-cdn-.+\\.footprint\\.net$",
-        "^nis.+\\.10010\\.com$"
+        ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
       ]
     },
     {
