@@ -3763,6 +3763,7 @@
         "ganjistatic1.com",
         "gaode.com",
         "gaodun.com",
+        "gaojidata.com",
         "gaokao.com",
         "gaoshouyou.com",
         "gaoxiaojob.com",
@@ -3979,6 +3980,7 @@
         "gxtv.cn",
         "gxxmt.com",
         "gyzq.com.cn",
+        "gzasc.com",
         "gzcqs.com",
         "gzctyiptv.cn",
         "gzlzfm.com",
@@ -6485,6 +6487,8 @@
         "qunjielong.com",
         "qunliao.info",
         "quyaoya.com",
+        "qwapp.top",
+        "qwdjapp.com",
         "qweather.com",
         "qweather.net",
         "qweatherapi.com",
@@ -6559,6 +6563,8 @@
         "rpglogs.cn",
         "rqnoj.cn",
         "rrmj.plus",
+        "rrsp.app",
+        "rrsp.com.cn",
         "rs.sinajs.cn",
         "rsproxy.cn",
         "rsscc.cn",
@@ -7921,6 +7927,7 @@
         "webex.com.cn",
         "webgame163.com",
         "webmasterhome.cn",
+        "weboss.hk",
         "webportal.top",
         "webterren.com",
         "wechat.com",
@@ -8352,6 +8359,7 @@
         "yhfund.com.cn",
         "yicai.com",
         "yiche.com",
+        "yichengwlkj.com",
         "yidianliulan.cn",
         "yidianliulan.com",
         "yigao.com",
@@ -8781,14 +8789,14 @@
         "zztfly.com"
       ],
       "domain_regex": [
-        "^nis.+\\.10010\\.com$",
+        ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$",
+        "^.+-mihayo\\.akamaized\\.net$",
+        "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.googlevideo\\.com$",
         "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.xn--ngstr-lra8j\\.com$",
         "^epicgames-download\\d-\\d+\\.file\\.myqcloud\\.com$",
+        "^nis.+\\.10010\\.com$",
         "^cdn\\d-epicgames-\\d+\\.file\\.myqcloud\\.com$",
-        "^r+[0-9]+(---|\\.)sn-(2x3|ni5|j5o)\\w{5}\\.googlevideo\\.com$",
-        ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$",
-        "^.+-mihayo\\.akamaized\\.net$",
-        ".+\\.awsdns-cn-[0-9][a-e0-9]\\.cn$"
+        ".+\\.awsdns-cn-[0-9][0-9]\\.(biz|com|net|top)$"
       ]
     }
   ]
