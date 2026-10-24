@@ -1,70 +1,51 @@
 #!/bin/bash
+set -euo pipefail
+
+cd -- "$(dirname -- "$0")"
 
 if ! command -v jq &>/dev/null; then
-    echo "Error: jq is required but not installed."
-    echo "Please install jq first:"
-    echo "  For Ubuntu/Debian: sudo apt install jq"
-    echo "  For MacOS: brew install jq"
+    echo "Error: jq is required but not installed." >&2
     exit 1
 fi
 
-mkdir -p tmp/rule-sets/{proxy,direct}
-mkdir -p source/{proxy,direct} binary
-
-echo "Downloading proxy rules..."
-while IFS= read -r url; do
-    filename=$(basename "$url")
-    wget -q "$url" -O "tmp/rule-sets/proxy/${filename}"
-done <proxy-list.txt
-
-echo "Downloading direct rules..."
-while IFS= read -r url; do
-    filename=$(basename "$url")
-    wget -q "$url" -O "tmp/rule-sets/direct/${filename}"
-done <direct-list.txt
-
-# 反编译所有代理规则为json
-echo "Decompiling proxy rules..."
-for file in tmp/rule-sets/proxy/*.srs; do
-    filename=$(basename "$file")
-    json_name="source/proxy/${filename%.srs}.json"
-    ./sing-box rule-set decompile "$file" -o "$json_name"
+groups=("$@")
+if ((${#groups[@]} == 0)); then
+    groups=(proxy direct clean)
+fi
+for group in "${groups[@]}"; do
+    case "$group" in
+        proxy|direct|clean) ;;
+        *) echo "Unknown rule group: $group" >&2; exit 1 ;;
+    esac
 done
 
-# 反编译所有直连规则为json
-echo "Decompiling direct rules..."
-for file in tmp/rule-sets/direct/*.srs; do
-    filename=$(basename "$file")
-    json_name="source/direct/${filename%.srs}.json"
-    ./sing-box rule-set decompile "$file" -o "$json_name"
+work_dir=$(mktemp -d)
+trap 'rm -rf -- "$work_dir"' EXIT
+mkdir -p binary
+
+for group in "${groups[@]}"; do
+    echo "Building $group rules..."
+    mkdir -p "$work_dir/$group" "source/$group"
+    # Retain the group's hand-maintained additions, but never merge stale downloads.
+    if [[ -f "source/$group/$group.json" ]]; then
+        cp "source/$group/$group.json" "$work_dir/$group/"
+    fi
+    while IFS= read -r url || [[ -n "$url" ]]; do
+        [[ -z "$url" || "$url" == \#* ]] && continue
+        filename=$(basename "$url")
+        wget -q "$url" -O "$work_dir/$filename"
+        json_name="$work_dir/$group/${filename%.srs}.json"
+        ./sing-box rule-set decompile "$work_dir/$filename" -o "$json_name"
+        ./sing-box rule-set upgrade "$json_name" -w
+        ./sing-box rule-set format "$json_name" -w
+    done <"$group-list.txt"
+
+    ./sing-box rule-set merge "$work_dir/merged_$group.json" -C "$work_dir/$group"
+    ./sing-box rule-set compile "$work_dir/merged_$group.json" -o "$work_dir/$group.srs"
+    # Publish this group's outputs only after every download and build succeeded.
+    cp "$work_dir/$group/"*.json "source/$group/"
+    cp "$work_dir/merged_$group.json" "source/merged_$group.json"
+    cp "$work_dir/$group.srs" "binary/$group.srs"
 done
 
-echo "Formatting proxy rules..."
-for file in source/proxy/*.json; do
-    filename=$(basename "$file")
-    ./sing-box rule-set upgrade "$file" -w
-    ./sing-box rule-set format "$file" -w
-done
-
-echo "Formatting direct rules..."
-for file in source/direct/*.json; do
-    filename=$(basename "$file")
-    ./sing-box rule-set upgrade "$file" -w
-    ./sing-box rule-set format "$file" -w
-
-done
-
-# 使用目录方式合并规则
-echo "Merging rules..."
-./sing-box rule-set merge source/merged_proxy.json -C source/proxy
-./sing-box rule-set merge source/merged_direct.json -C source/direct
-# 编译最终的规则集
-echo "Compiling final rule sets..."
-./sing-box rule-set compile source/merged_proxy.json -o binary/proxy.srs
-./sing-box rule-set compile source/merged_direct.json -o binary/direct.srs
-
-# 清理临时文件
-echo "Cleaning up..."
-rm -rf tmp/
-
-echo "Done! Final rule sets are in binary/proxy.srs and binary/direct.srs"
+echo "Done! Final rule sets are in binary/."

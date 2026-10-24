@@ -1,0 +1,8 @@
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-netflix.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-huggingface.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google-scholar.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-scholar-!cn.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-anthropic.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-openai.srs
