@@ -1,2 +1,4 @@
 https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-anthropic.srs
 https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-openai.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple.srs

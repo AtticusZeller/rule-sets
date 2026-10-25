@@ -1,0 +1,36 @@
+{
+  "version": 3,
+  "rules": [
+    {
+      "domain_suffix": [
+        "github.com",
+        "githubusercontent.com",
+        "githubassets.com",
+        "github.io",
+        "github.dev",
+        "githubapp.com",
+        "githubcopilot.com",
+        "ghcr.io",
+        "ghe.com",
+        "huggingface.co",
+        "huggingface.com",
+        "hf.co",
+        "gcr.io",
+        "pkg.dev",
+        "go.dev",
+        "golang.com",
+        "golang.net",
+        "golang.org",
+        "tensorflow.org",
+        "download.tensorflow.google.com",
+        "storage.googleapis.com",
+        "artifactregistry.googleapis.com",
+        "colab.research.google.com",
+        "kaggle.com",
+        "kaggle.io",
+        "kaggle.net",
+        "kaggleusercontent.com"
+      ]
+    }
+  ]
+}

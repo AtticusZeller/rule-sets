@@ -41,6 +41,16 @@ for group in "${groups[@]}"; do
     done <"$group-list.txt"
 
     ./sing-box rule-set merge "$work_dir/merged_$group.json" -C "$work_dir/$group"
+    # Optional exclusions apply to the entire aggregate, including nested vendor groups.
+    if [[ -f "$group-exclude.json" ]]; then
+        jq -s '.[0] as $include | .[1] as $exclude | $include | .rules = [{
+            type: "logical", mode: "and", rules: [
+                {type: "logical", mode: "or", rules: $include.rules},
+                {type: "logical", mode: "or", invert: true, rules: $exclude.rules}
+            ]
+        }]' "$work_dir/merged_$group.json" "$group-exclude.json" > "$work_dir/filtered_$group.json"
+        mv "$work_dir/filtered_$group.json" "$work_dir/merged_$group.json"
+    fi
     ./sing-box rule-set compile "$work_dir/merged_$group.json" -o "$work_dir/$group.srs"
     # Publish this group's outputs only after every download and build succeeded.
     cp "$work_dir/$group/"*.json "source/$group/"
