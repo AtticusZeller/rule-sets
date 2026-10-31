@@ -9,7 +9,8 @@ build before replacing that group's published outputs. Builds merge the current
 list plus optional hand-maintained `source/<group>/<group>.json` additions.
 
 `clean-list.txt` combines Anthropic, OpenAI, Google and Apple. The hand-maintained
-`source/clean/clean.json` adds `challenges.cloudflare.com` and `dash.cloudflare.com`.
+`source/clean/clean.json` adds `challenges.cloudflare.com`, `dash.cloudflare.com`,
+and Arena (`arena.ai`, plus legacy `lmarena.ai`).
 Google and Apple are whole-provider groups, including YouTube and ordinary
 provider downloads. Microsoft/OneDrive, Netflix, Hugging Face and GitHub are not
 added as clean groups. The ISP allowance is 100 GB/month, so development/download

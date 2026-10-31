@@ -3,8 +3,10 @@
   "rules": [
     {
       "domain_suffix": [
+        "arena.ai",
         "challenges.cloudflare.com",
-        "dash.cloudflare.com"
+        "dash.cloudflare.com",
+        "lmarena.ai"
       ]
     }
   ]
