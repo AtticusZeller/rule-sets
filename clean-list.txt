@@ -2,3 +2,5 @@ https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-anthrop
 https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-openai.srs
 https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs
 https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-apple.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-paypal.srs
+https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-slack.srs

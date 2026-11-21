@@ -8,9 +8,12 @@ binary, `jq`, and `wget` are required. A failed download or compile stops the
 build before replacing that group's published outputs. Builds merge the current
 list plus optional hand-maintained `source/<group>/<group>.json` additions.
 
-`clean-list.txt` combines Anthropic, OpenAI, Google and Apple. The hand-maintained
-`source/clean/clean.json` adds `challenges.cloudflare.com`, `dash.cloudflare.com`,
-and Arena (`arena.ai`, plus legacy `lmarena.ai`).
+`clean-list.txt` combines Anthropic, OpenAI, Google, Apple, PayPal and Slack.
+The hand-maintained `source/clean/clean.json` adds `challenges.cloudflare.com`,
+`dash.cloudflare.com`, and Arena (`arena.ai`, plus legacy `lmarena.ai`).
+The PayPal group also covers related services such as Braintree and Venmo.
+The Slack group does not add the [Slack Huddles media destinations](https://slack.com/help/articles/36284146785427-Guide-to-network-and-system-configuration-for-Slack-huddles);
+the ISP exit does not support UDP.
 Google and Apple are whole-provider groups, including YouTube and ordinary
 provider downloads. Microsoft/OneDrive, Netflix, Hugging Face and GitHub are not
 added as clean groups. The ISP allowance is 100 GB/month, so development/download
